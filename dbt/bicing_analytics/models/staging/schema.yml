@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_station_status
+    columns:
+      - name: station_id
+        data_tests:
+          - not_null
+
+      - name: num_vehicles_available
+        data_test:
+          - not_null
+
+      - name: num_docks_available
+        data_test:
+          - not_null

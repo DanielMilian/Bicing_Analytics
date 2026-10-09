@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment variables
+.env
+.env*
+
+# Testing
+.pytest_cache/
+.coverage
+
+# dbt generated files
+dbt/logs
+dbt/bicing_analytics/target/
+dbt/bicing_analytics/logs/
+dbt/bicing_analytics/dbt_packages/
+
+# OS
+.DS_Store
+
+# Local data
+data/*
+!data/.gitkeep
+```

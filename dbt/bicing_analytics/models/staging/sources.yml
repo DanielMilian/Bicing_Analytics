@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: bicing
+    schema: public
+    tables:
+      - name: raw_station_status
+        columns:
+          - name: station_id
+            data_tests:
+              - not_null
+
+          - name: last_reported
+            data_test:
+              - not_null
+
+          - name: num_vehicles_available
+            data_test:
+              - not_null
+
+          - name: num_docks_available
+            data_tests:
+              - not_null
