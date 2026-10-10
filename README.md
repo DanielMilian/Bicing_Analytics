@@ -8,6 +8,30 @@ Live Dashboard: https://barcelona-bicinganalytics.streamlit.app/
 
 GitHub Repository: https://github.com/DanielMilian/Bicing_Analytics
 
+
+## 📊 Dashboard Preview
+
+Explore the live dashboard here: **[Barcelona Bicing Analytics](https://barcelona-bicinganalytics.streamlit.app/)**
+
+### Network Overview
+
+Get a snapshot of Barcelona's bike-sharing network and current station availability.
+
+![Bicing Dashboard Overview](docs/bicing_dashboard_overview.png)
+
+### Historical Trends
+
+Explore historical bike availability and network-wide trends over time.
+
+![Bicing Dashboard Historical Trends](docs/bicing_dashboard_historical_trends.png)
+
+### Station Explorer
+
+Inspect availability at individual stations across the Bicing network.
+
+![Bicing Dashboard Station Explorer](docs/bicing_dashboard_station_explorer.png)
+
+
 ## Architecture
 
 ```text
