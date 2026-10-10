@@ -8,9 +8,9 @@ models:
           - not_null
 
       - name: num_vehicles_available
-        data_test:
+        data_tests:
           - not_null
 
       - name: num_docks_available
-        data_test:
+        data_tests:
           - not_null

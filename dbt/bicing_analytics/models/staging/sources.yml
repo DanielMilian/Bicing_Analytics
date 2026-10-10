@@ -11,11 +11,11 @@ sources:
               - not_null
 
           - name: last_reported
-            data_test:
+            data_tests:
               - not_null
 
           - name: num_vehicles_available
-            data_test:
+            data_tests:
               - not_null
 
           - name: num_docks_available

@@ -16,17 +16,37 @@ st.set_page_config(
         layout="wide",
         )
 
-DB_CONFIG = {
+# Local development uses project-root .env file.
+try:
+    cloud_db = st.secrets.get("supabase")
+except (FileNotFoundError, st.errors.StreamlitSecretNotFoundError):
+    cloud_db = None
+
+if cloud_db:
+    DB_CONFIG = {
+        "host": cloud_db["host"],
+        "port": int(cloud_db.get("port", 5432)),
+        "dbname": cloud_db.get("dbname", "postgres"),
+        "user": cloud_db["user"],
+        "password": cloud_db["password"],
+        "sslmode": "require",
+        "connect_timeout": 15,
+    }
+else:
+    DB_CONFIG = {
         "host": os.getenv("POSTGRES_HOST", "localhost"),
-        "port": os.getenv("POSTGRES_PORT", "5432"),
+        "port": int(os.getenv("POSTGRES_PORT", "5432")),
         "dbname": os.getenv("POSTGRES_DB"),
         "user": os.getenv("POSTGRES_USER"),
         "password": os.getenv("POSTGRES_PASSWORD"),
-        }
+        "connect_timeout": 15,
+    }
 
 def get_connection():
     missing = [
-            key for key, value in DB_CONFIG.items() if value is None or value == ""
+            key for key, value in DB_CONFIG.items() 
+            if key in ("host", "dbname", "user", "password")
+            and (value is None or value == "")
             ]
 
     if missing:
